@@ -1,7 +1,7 @@
 package com.example;
 
-import com.example.model.CardBin;
-import com.example.model.CardBinDeserializer;
+import com.example.domain.CardBin;
+import com.example.domain.CardBinDeserializer;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import org.slf4j.LoggerFactory;

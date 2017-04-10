@@ -1,6 +1,6 @@
 package com.example;
 
-import com.example.model.CardBin;
+import com.example.domain.CardBin;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
