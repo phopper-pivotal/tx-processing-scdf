@@ -1,8 +1,11 @@
 package io.pivotal;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+
+import java.io.IOException;
 
 @RestController
 @RequestMapping(value = "/enrichWithCardAccount",
@@ -12,11 +15,16 @@ import org.springframework.web.bind.annotation.*;
 @ResponseBody
 public class CardAccountController {
 
-    public String enrichWithCardAccount(@RequestBody String payload) {
-        // grab the accountNumber from the payload
-
+    public String enrichWithCardAccount(@RequestBody String payload) throws IOException {
         // merge CardAccount JSON into @ResponseBody
         ObjectMapper mapper = new ObjectMapper();
+
+        // convert request payload to a JsonNode so we can traverse tree
+        JsonNode rootNode = mapper.readTree(payload);
+
+        // grab cardAccountNumber from root
+
+
 
         // return the new JSON structure with enriched data
 

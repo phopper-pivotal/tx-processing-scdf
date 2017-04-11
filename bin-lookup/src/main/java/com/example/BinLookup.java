@@ -22,11 +22,10 @@ public class BinLookup {
         //@TODO externalize the URL into SCS Config
         URI uri = URI.create("https://bins.payout.com/api/v1/bins/" + bin);
         String value = restTemplate.getForObject(uri, String.class);
-        log.info(value);
 
-        log.info("JSON to CardBin: " + this.getCardBin(value).toString());
+        log.info("JSON to CardBin for bin (" + bin + "): " + this.getCardBin(value).toString());
 
-        return new CardBin();
+        return this.getCardBin(value);
     }
 
     public CardBin getCardBin(String json) {
